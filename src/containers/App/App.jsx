@@ -48,6 +48,7 @@ class App extends React.Component {
     const { classes, ...rest } = this.props;
     return (
       <div className={classes.wrapper}>
+        <div id="sidebar">
         <Sidebar
           routes={appRoutes}
           logoText={"Creative Tim"}
@@ -58,12 +59,15 @@ class App extends React.Component {
           color="blue"
           {...rest}
         />
+        </div>
         <div className={classes.mainPanel} ref="mainPanel">
+          <div id="header">
           <Header
             routes={appRoutes}
             handleDrawerToggle={this.handleDrawerToggle}
             {...rest}
           />
+          </div>
           {/* On the /maps route we want the map to be on full screen - this is not possible if the content and conatiner classes are present because they have some paddings which would make the map smaller */}
           {this.getRoute() ? (
             <div className={classes.content}>
@@ -72,7 +76,9 @@ class App extends React.Component {
           ) : (
             <div className={classes.map}>{switchRoutes}</div>
           )}
+          <div id="footer">
           {this.getRoute() ? <Footer /> : null}
+          </div>
         </div>
       </div>
     );
