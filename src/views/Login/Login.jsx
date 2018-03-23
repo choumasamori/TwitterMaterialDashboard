@@ -52,19 +52,7 @@ function Login({ ...props }) {
             footer={<Button color="primary">Log In</Button>}
           />
         </ItemGrid>
-        <ItemGrid xs={12} sm={12} md={4}>
-          <ProfileCard
-            avatar={avatar}
-            subtitle="CEO / CO-FOUNDER"
-            title="Alec Thompson"
-            description="Don't be scared of the truth because we need to restart the human foundation in truth And I love you like Kanye loves Kanye I love Rick Owens’ bed design but the back is..."
-            footer={
-              <Button color="primary" round>
-                Follow
-              </Button>
-            }
-          />
-        </ItemGrid>
+
       </Grid>
     </div>
   );
