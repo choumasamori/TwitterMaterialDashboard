@@ -71,8 +71,8 @@ const appRoutes = [
   },
   {
     path: "/login",
-    sidebarName: "Login",
-    navbarName: "Login",
+    sidebarName: "null",
+    navbarName: "null",
     icon: Fingerprint,
     component: Login
   },
@@ -83,7 +83,7 @@ const appRoutes = [
     icon: Fingerprint,
     component: TableTest
   },
-  { redirect: true, path: "/", to: "/dashboard", navbarName: "Redirect" }
+  { redirect: true, path: "/", to: "/login", navbarName: "Redirect" }
 ];
 
 export default appRoutes;
