@@ -5,6 +5,8 @@ import { RegularCard, Table, ItemGrid } from "components";
 import './TableTest.css';
 
 
+
+/*
 function contentClass(isShow) {
   if (isShow) {
     return "ItemGrid";
@@ -13,26 +15,44 @@ function contentClass(isShow) {
 }
 
 
-export class TableTest extends Component {
-  constructor(props) {
+
+  /*constructor(props) {
     super(props);
     this.state = {isShow: true};
     this.handleClick = this.handleClick.bind(this);
-  }
+  }*/
 
-  handleClick() {
+  /*handleClick() {
     this.setState(function(prevState) {
       return {isShow: !prevState.isShow};
     });
-  }
+  }*/
 
+
+  
+  //    <div className='control' onClick={this.handleClick}>Click me to toggle</div>
+  //   <div className={contentClass(this.state.isShow)}>
+
+
+  export class TableTest extends Component {
+    
+  showDetails(id) {
+    if ( !document.getElementById(id).classList.contains('visible')  ) {
+			document.getElementById(id).setAttribute('class', 'visible');
+			document.getElementById(id).style.display = "block";
+		}
+		else {
+			document.getElementById(id).className = '';
+			document.getElementById(id).style.display = "none";
+		}
+  }
 
   render(){
     return(
    <Grid container>
-    <div className='control' onClick={this.handleClick}>Click me to toggle</div>
-     <div className={contentClass(this.state.isShow)}>
+     <button onClick={()=>this.showDetails("table1")} type="submit">Show/Hide</button>
         <ItemGrid xs={12} sm={12} md={12}>
+        <div id="table1">
           <RegularCard
             cardTitle="Simple Table"
             cardSubtitle="Here is a subtitle for this table"
@@ -51,10 +71,13 @@ export class TableTest extends Component {
               />
             }
           />
+          </div>
         </ItemGrid>
-      </div>
 
+
+      <button onClick={()=>this.showDetails("table2")} type="submit">Show/Hide</button>
       <ItemGrid xs={12} sm={12} md={12}>
+      <div id="table2">
         <RegularCard
           plainCard
           cardTitle="Table on Plain Background"
@@ -86,6 +109,7 @@ export class TableTest extends Component {
             />
           }
         />
+      </div>
       </ItemGrid>
     </Grid>
     );
