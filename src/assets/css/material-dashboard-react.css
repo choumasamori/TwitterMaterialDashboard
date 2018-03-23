@@ -219,3 +219,7 @@ footer ul li a:hover {
         overflow-x: hidden;
     }
 }
+#loginContainer{
+    margin-left: 25%;
+    margin-top: 10%;
+}
