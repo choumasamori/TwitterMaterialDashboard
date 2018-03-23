@@ -13,7 +13,7 @@ import avatar from "assets/img/faces/marc.jpg";
 
 export class Login extends React.Component{
   componentDidMount(){
-    this.hideEverything();
+    
   }
   hideEverything(){
     document.getElementById("sidebar").style.display = "none";
