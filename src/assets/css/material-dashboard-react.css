@@ -13,6 +13,9 @@
  * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
  */
+ #root{
+    height:100%;
+ }
 .ct-grid {
     stroke: rgba(255, 255, 255, 0.2);
     stroke-width: 1px;
@@ -64,6 +67,10 @@ body {
     font-family: Roboto, Helvetica, Arial, sans-serif;
     font-weight: 300;
     line-height: 1.5em;
+    padding: 0;
+    width:100%;
+    height:100%;
+    min-height: 100%;
 }
 
 blockquote footer:before, blockquote small:before {
@@ -204,6 +211,9 @@ footer ul li a:hover {
     html {
         position: relative;
         overflow-x: hidden;
+        height:100%;
+    min-height: 100%;
+    
     }
 
     #bodyClick {
@@ -220,8 +230,7 @@ footer ul li a:hover {
     }
 }
 #loginContainer{
-    margin:0 auto;
-    margin-top: 5%;
+    margin:0 auto;  
     width: 500px;
     text-align: center;
 }
@@ -231,5 +240,15 @@ footer ul li a:hover {
 }
 
 .loginBody{
-    background-image: url('https://wallpapers.walldevil.com/wallpapers/a52/preview/wallpapers-toronto-sunset-city-wallpaper-cities-widescreen-images.jpg');
+    background-image: url('https://www.thewallpapers.org/photo/35740/sunset-in-city.jpg'); 
+    height: 100%;
+    background-size: cover;
 }
+body,
+    html {
+        position: relative;
+        overflow-x: hidden;
+        height:100%;
+         min-height: 100%;
+    
+    }

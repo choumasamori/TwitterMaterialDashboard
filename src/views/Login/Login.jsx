@@ -13,6 +13,7 @@ import {
 import avatar from "assets/img/faces/marc.jpg";
 import logo from "assets/img/logo.png";
 
+
 import Checkbox from 'material-ui/Checkbox';
 
 const styles = {
