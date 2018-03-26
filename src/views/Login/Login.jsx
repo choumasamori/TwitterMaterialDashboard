@@ -20,17 +20,21 @@ import 'font-awesome/css/font-awesome.min.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'mdbreact/dist/css/mdb.css';
 
+import 'assets/css/style.css';
 
 
+import Background from '../../assets/img/k2.jpg';
 
-const styles = {
-  block: {
-    maxWidth: 250,
-  },
-  checkbox: {
-    marginBottom: 16,
-  },
+
+var sectionStyle = {
+  width: "100%",
+  height: "100%",
+  backgroundSize: "100%",
+  overFlow: "hidden",
+  backgroundImage: `url(${Background})`
 };
+
+
 
 export class Login extends React.Component{
   constructor(props){
@@ -68,7 +72,7 @@ export class Login extends React.Component{
   }
   render(){
     return (
-      <div>
+      <div style={sectionStyle}>
       {this.state.isLogIn ?  <Redirect to={{pathname: '/dashboard'}}/> : 
       <div id="loginContainer">
       <Grid container>
@@ -107,10 +111,7 @@ export class Login extends React.Component{
                   </ItemGrid>
                 </Grid>
                   <Checkbox
-                      label="Simple with controlled value"
                   />Remember Me
-
-
               </div>
             }
             footer={<Button color="primary" onClick={this.handleClick}>Log In</Button>}
