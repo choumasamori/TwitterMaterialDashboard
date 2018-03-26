@@ -65,8 +65,11 @@ export class Login extends React.Component{
     return (
       <div className="loginBody" style={sectionStyle}>
       {this.state.isLogIn ?  <Redirect to={{pathname: '/dashboard'}}/> : 
+      <div class="outer">
+  <div class="middle">
+    <div class="inner">
       <div id="loginContainer">
-      <div className='logoContainer'>
+       <div className='logoContainer'>
         <img src={logo} />
       </div>
       <Grid container>
@@ -114,6 +117,9 @@ export class Login extends React.Component{
         </ItemGrid>
       </Grid>
     </div> 
+    </div>
+  </div>
+</div>
       }
       </div>
     );

@@ -239,11 +239,6 @@ footer ul li a:hover {
     width: 300px;
 }
 
-.loginBody{
-    background-image: url('https://www.thewallpapers.org/photo/35740/sunset-in-city.jpg'); 
-    height: 100%;
-    background-size: cover;
-}
 #checkbox{
     text-align: left;
 }
@@ -254,4 +249,20 @@ body,
         height:100%;
         min-height: 100%;
     
+    }
+    .outer {
+        display: table;
+        position: absolute;
+        height: 100%;
+        width: 100%;
+    }
+    
+    .middle {
+        display: table-cell;
+        vertical-align: middle;
+    }
+    
+    .inner {
+        margin-left: auto;
+        margin-right: auto;
     }
