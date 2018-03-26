@@ -20,6 +20,8 @@ import TextField from 'material-ui/TextField';
 
 import Background from '../../assets/img/background.jpg';
 
+import '../../assets/css/style.css';
+
 
 var sectionStyle = {
   backgroundSize: "cover",
@@ -105,8 +107,9 @@ export class Login extends React.Component{
                     />
                   </ItemGrid>
                 </Grid>
-                  <Checkbox
-                  />Remember Me
+                  <Checkbox className="cekbox"
+                  label="tret"
+                  /> Remember Me
               </div>
             }
             footer={<Button style={{background: '#E63313'}} color="primary" onClick={this.handleClick}>Log In</Button>}
