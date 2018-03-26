@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 <<<<<<< HEAD
 >>>>>>> 5f824816b2005cd14dc7145a67e3c572700f5f41
@@ -186,3 +187,6 @@ Instagram: <https://instagram.com/creativetimofficial>
 # MaterialDashboard
 >>>>>>> bb19719661c26c7be76a3fdcf70732863600b486
 >>>>>>> 5f824816b2005cd14dc7145a67e3c572700f5f41
+=======
+# TwitterMaterialDashboard
+>>>>>>> fce58c2582603348b511e2be57bc1e18344fd67c
