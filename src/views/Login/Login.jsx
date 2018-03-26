@@ -73,7 +73,7 @@ export class Login extends React.Component{
         <img src={logo} />
       </div>
       <Grid container>
-        <ItemGrid xs={12} sm={12} md={8}>
+        <ItemGrid xs={12} sm={12} md={12}>
           <RegularCard
             cardTitle="EARLY ALERT MANAGEMENT SYSTEM"
             cardSubtitle=""
@@ -81,7 +81,7 @@ export class Login extends React.Component{
             content={
               <div>
                 <Grid container>
-                  <ItemGrid xs={12} sm={12} md={4}>
+                  <ItemGrid xs={12} sm={12} md={12}>
                     <CustomInput
                       labelText="Username"
                       id="username"
@@ -93,9 +93,8 @@ export class Login extends React.Component{
                     />
                   </ItemGrid>
                 </Grid>
-
                 <Grid container>
-                  <ItemGrid xs={12} sm={12} md={4}>
+                  <ItemGrid xs={12} sm={12} md={12}>
                     <CustomInput
                       labelText="Password"
                       id="first-name"
@@ -108,8 +107,10 @@ export class Login extends React.Component{
                     />
                   </ItemGrid>
                 </Grid>
+                <div id="checkbox">
                   <Checkbox
                   />Remember Me
+                </div>
               </div>
             }
             footer={<Button style={{background: '#E63313'}} color="primary" onClick={this.handleClick}>Log In</Button>}

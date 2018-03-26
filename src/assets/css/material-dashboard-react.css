@@ -239,6 +239,11 @@ footer ul li a:hover {
     width: 300px;
 }
 
+.loginBody{
+
+    height: 100%;
+    background-size: cover;
+}
 #checkbox{
     text-align: left;
 }
