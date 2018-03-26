@@ -7,6 +7,8 @@ import Maps from "views/Maps/Maps.jsx";
 import NotificationsPage from "views/Notifications/Notifications.jsx";
 import Login from "views/Login/Login.jsx"
 import TableTest from "views/TableTest/TableTest.jsx"
+import Main from "views/Main/Main.jsx"
+
 
 import {
   Dashboard,
@@ -26,6 +28,13 @@ const appRoutes = [
     navbarName: "Material Dashboard",
     icon: Dashboard,
     component: DashboardPage
+  },
+  {
+    path: "/main",
+    sidebarName: "Main",
+    navbarName: "Main TWIT",
+    icon: Dashboard,
+    component: Main
   },
   {
     path: "/user",
