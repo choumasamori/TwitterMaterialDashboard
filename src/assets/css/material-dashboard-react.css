@@ -222,4 +222,5 @@ footer ul li a:hover {
 #loginContainer{
     margin-left: 25%;
     margin-top: 10%;
+    width: auto;
 }
