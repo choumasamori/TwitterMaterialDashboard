@@ -14,11 +14,19 @@ import avatar from "assets/img/faces/marc.jpg";
 import logo from "assets/img/logo.png";
 
 
-import Checkbox from 'material-ui/Checkbox';
-
 import TextField from 'material-ui/TextField';
 
 import Background from '../../assets/img/background.jpg';
+
+
+import {
+  FormLabel,
+  FormControl,
+  FormGroup,
+  FormControlLabel,
+  FormHelperText,
+} from 'material-ui/Form';
+import Checkbox from 'material-ui/Checkbox';
 
 
 var sectionStyle = {
@@ -107,10 +115,20 @@ export class Login extends React.Component{
                     />
                   </ItemGrid>
                 </Grid>
-                <div id="checkbox">
-                  <Checkbox
-                  />Remember Me
-                </div>
+
+                <FormControl component="fieldset" id = "checkbox">
+                  <FormGroup>
+                    <FormControlLabel
+                      control={
+                        <Checkbox
+                          value="Remember Me"
+                        />
+                      }
+                      label="Remember Me"
+                    />
+                    </FormGroup>
+                </FormControl>
+
               </div>
             }
             footer={<Button style={{background: '#E63313'}} color="primary" onClick={this.handleClick}>Log In</Button>}

@@ -245,7 +245,7 @@ footer ul li a:hover {
     background-size: cover;
 }
 #checkbox{
-    text-align: left;
+    float: left;
 }
 body,
     html {
