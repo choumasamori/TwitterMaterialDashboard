@@ -20,8 +20,6 @@ import TextField from 'material-ui/TextField';
 
 import Background from '../../assets/img/background.jpg';
 
-import '../../assets/css/style.css';
-
 
 var sectionStyle = {
   backgroundSize: "cover",
@@ -67,12 +65,12 @@ export class Login extends React.Component{
     return (
       <div className="loginBody" style={sectionStyle}>
       {this.state.isLogIn ?  <Redirect to={{pathname: '/dashboard'}}/> : 
-      <div id="loginContainer"><br/> <br/> <br/> <br/><br/>
-       <div className='logoContainer'>
+      <div id="loginContainer">
+      <div className='logoContainer'>
         <img src={logo} />
       </div>
       <Grid container>
-        <ItemGrid xs={12} sm={12} md={12}>
+        <ItemGrid xs={12} sm={12} md={8}>
           <RegularCard
             cardTitle="EARLY ALERT MANAGEMENT SYSTEM"
             cardSubtitle=""
@@ -80,7 +78,7 @@ export class Login extends React.Component{
             content={
               <div>
                 <Grid container>
-                  <ItemGrid xs={12} sm={12} md={12}>
+                  <ItemGrid xs={12} sm={12} md={4}>
                     <CustomInput
                       labelText="Username"
                       id="username"
@@ -94,7 +92,7 @@ export class Login extends React.Component{
                 </Grid>
 
                 <Grid container>
-                  <ItemGrid xs={12} sm={12} md={12}>
+                  <ItemGrid xs={12} sm={12} md={4}>
                     <CustomInput
                       labelText="Password"
                       id="first-name"
@@ -107,11 +105,8 @@ export class Login extends React.Component{
                     />
                   </ItemGrid>
                 </Grid>
-                <div id="checkbox">
-                  <Checkbox valueLink="dsa"
-
+                  <Checkbox
                   />Remember Me
-                </div>
               </div>
             }
             footer={<Button style={{background: '#E63313'}} color="primary" onClick={this.handleClick}>Log In</Button>}
