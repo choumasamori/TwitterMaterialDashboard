@@ -1,5 +1,6 @@
 import React from "react";
 import { Grid } from "material-ui";
+import {Redirect} from 'react-router-dom';
 
 import {
   ProfileCard,
@@ -14,6 +15,14 @@ import avatar from "assets/img/faces/marc.jpg";
 import Checkbox from 'material-ui/Checkbox';
 
 
+import 'bootstrap/dist/css/bootstrap.css';
+import 'font-awesome/css/font-awesome.min.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'mdbreact/dist/css/mdb.css';
+
+
+
+
 const styles = {
   block: {
     maxWidth: 250,
@@ -24,60 +33,92 @@ const styles = {
 };
 
 export class Login extends React.Component{
-  componentDidMount(){
-    
+  constructor(props){
+    super(props);
+    this.state={
+      isLogIn: false,
+      email: '',
+      password: '',
+    };
+    this.onChangeEmail = this.onChangeEmail.bind(this);
+    this.onChangePassword = this.onChangePassword.bind(this);
+    this.handleClick = this.handleClick.bind(this);
   }
-  hideEverything(){
-    document.getElementById("sidebar").style.display = "none";
-    document.getElementById("header").style.display = "none";
-    document.getElementById("footer").style.display = "none";
+  onChangeEmail(event){
+    this.setState({
+      email: event.target.value,
+    });
+  }
+  onChangePassword(event){
+    this.setState({
+      password: event.target.value,
+    });
+  }
+  handleClick(){
+    if(this.state.email=='john'&&this.state.password=='123456'){
+      this.setState({
+        isLogIn: true
+      });
+    }else{
+      this.setState({
+        email: '',
+        password: '',
+      });
+    }
   }
   render(){
     return (
+      <div>
+      {this.state.isLogIn ?  <Redirect to={{pathname: '/dashboard'}}/> : 
       <div id="loginContainer">
-        <Grid container>
-          <ItemGrid xs={12} sm={12} md={8}>
-            <RegularCard
-              cardTitle="EARLY ALERT MANAGEMENT SYSTEM"
-              cardSubtitle=""
-              content={
-                <div>
-                  <Grid container>
-  
-  
-                    <ItemGrid xs={12} sm={12} md={4}>
-                      <CustomInput
-                        labelText="Username"
-                        id="username"
-                        formControlProps={{
-                          fullWidth: true
-                        }}
-                      />
-                    </ItemGrid>
-                  </Grid>
-  
-                  <Grid container>
-                    <ItemGrid xs={12} sm={12} md={4}>
-                      <CustomInput
-                        labelText="Password"
-                        id="first-name"
-                        formControlProps={{
-                          fullWidth: true
-                        }}
-                      />
-                    </ItemGrid>
-                  </Grid>
+      <Grid container>
+        <ItemGrid xs={12} sm={12} md={8}>
+          <RegularCard
+            cardTitle="Admin Login"
+            cardSubtitle=""
+            content={
+              <div>
+                <Grid container>
+                  <ItemGrid xs={12} sm={12} md={4}>
+                    <CustomInput
+                      labelText="Email address"
+                      id="email-address"
+                      formControlProps={{
+                        fullWidth: true
+                      }}
+                      value={this.state.email}
+                      onChange={this.onChangeEmail}
+                    />
+                  </ItemGrid>
+                </Grid>
 
-                <Checkbox
-                  label="DSASSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSDADSADA"
-                />
-  
-                </div>
-              }
-              footer={<Button color="primary">Log In</Button>}
-            />
-          </ItemGrid>
-        </Grid>
+                <Grid container>
+                  <ItemGrid xs={12} sm={12} md={4}>
+                    <CustomInput
+                      labelText="Password"
+                      id="first-name"
+                      formControlProps={{
+                        fullWidth: true
+                      }}
+                      value={this.state.password}
+                      type="password"
+                      onChange={this.onChangePassword}
+                    />
+                  </ItemGrid>
+                </Grid>
+                  <Checkbox
+                      label="Simple with controlled value"
+                  />Remember Me
+
+
+              </div>
+            }
+            footer={<Button color="primary" onClick={this.handleClick}>Log In</Button>}
+          />
+        </ItemGrid>
+      </Grid>
+    </div> 
+      }
       </div>
     );
   }
