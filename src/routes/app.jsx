@@ -7,8 +7,8 @@ import Maps from "views/Maps/Maps.jsx";
 import NotificationsPage from "views/Notifications/Notifications.jsx";
 import Login from "views/Login/Login.jsx"
 import TableTest from "views/TableTest/TableTest.jsx"
-import Main from "views/Main/Main.jsx"
-
+import {Main} from 'views/Main/Main.js';
+import {Logout} from 'views/Logout/Logout.jsx';
 
 import {
   Dashboard,
@@ -23,67 +23,17 @@ import {
 
 const appRoutes = [
   {
-    path: "/dashboard",
-    sidebarName: "Dashboard",
-    navbarName: "Material Dashboard",
-    icon: Dashboard,
-    component: DashboardPage
-  },
-  {
     path: "/main",
     sidebarName: "Main",
-    navbarName: "Main TWIT",
+    navbarName: "TWITTER",
     icon: Dashboard,
     component: Main
   },
   {
-    path: "/user",
-    sidebarName: "User Profile",
-    navbarName: "Profile",
-    icon: Person,
-    component: UserProfile
-  },
-  {
-    path: "/table",
-    sidebarName: "Table List",
-    navbarName: "Table List",
-    icon: ContentPaste,
-    component: TableList
-  },
-  {
-    path: "/typography",
-    sidebarName: "Typography",
-    navbarName: "Typography",
-    icon: LibraryBooks,
-    component: Typography
-  },
-  {
-    path: "/icons",
-    sidebarName: "Icons",
-    navbarName: "Icons",
-    icon: BubbleChart,
-    component: Icons
-  },
-  {
-    path: "/maps",
-    sidebarName: "Maps",
-    navbarName: "Map",
-    icon: LocationOn,
-    component: Maps
-  },
-  {
-    path: "/notifications",
-    sidebarName: "Notifications",
-    navbarName: "Notifications",
-    icon: Notifications,
-    component: NotificationsPage
-  },
-  {
-    path: "/tabletest",
-    sidebarName: "Table Test",
-    navbarName: "Table Test",
-    icon: Fingerprint,
-    component: TableTest
+    path: "/logout",
+    sidebarName: "Log Out",
+    icon: Dashboard,
+    component: Logout
   },
   { redirect: true, path: "/", to: "/login", navbarName: "Redirect" }
 ];

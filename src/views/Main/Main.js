@@ -1,43 +1,35 @@
 import React from 'react';
-import TextField from 'material-ui/TextField';
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
-import Card,{CardActions, CardHeader, CardMedia, CardTitle, CardText} from 'material-ui/Card';
-import './Main.css';
-import {List, ListItem} from 'material-ui/List';
+import Card, {CardActions, CardHeader, CardMedia} from 'material-ui/Card';
 import Divider from 'material-ui/Divider';
-import {Avatar} from './Avatar';
-import {People} from './People';
-//bootstrap & jquery
-import 'bootstrap/dist/css/bootstrap.min.css';
-import 'jquery/dist/jquery.min.js';
-
 import {Redirect} from 'react-router-dom';
-
-const styles = {
-    example: {
-        position: "fixed",
-        top:0
-    }
-};
+import { Grid } from "material-ui";
+import {
+    ProfileCard,
+    RegularCard,
+    Button,
+    CustomInput,
+    ItemGrid
+  } from "components";
+  import {
+    FormLabel,
+    FormControl,
+    FormGroup,
+    FormControlLabel,
+    FormHelperText,
+  } from 'material-ui/Form';
 
 export class Main extends React.Component{
     constructor(props){
         super(props);
-
         this.state = {
             completed: 0,
-            load: false,
             menu: false,
             tweets: [],
-            file: '',
+            file:"null",
             tweet: '',
+            people: [],
         };
-        this.ShowMenu = this.ShowMenu.bind(this);
         this.onChangeTweet = this.onChangeTweet.bind(this);
-    }
-
-    clearFile(){
-        document.getElementById("profilePictures").value = "";
     }
 
     getTweets(){
@@ -72,8 +64,35 @@ export class Main extends React.Component{
       });
       this.setState(({tweet: ""}));
 
+      fetch('https://randomuser.me/api/?results=5')
+        .then(results => results.json())
+        .then(data => {let people = data.results.map((item, index)=>{
+            return(
+                <div key={index} className="follow">
+                    <Card>
+                    <div className="peopleDetail">
+                    <div className="headerWrapper">
+                    <CardHeader style={{}} title={item.name.first} subtitle={item.login.username} avatar={item.picture.medium} />
+                    </div>
+                    <CardActions style={{ marginTop: '4%',}}>
+                            <button type="submit" label="Follow"/>
+                    </CardActions>
+                    </div>
+                    </Card>
+                 </div>
+            );
+        });
+        this.setState({
+            people: people,
+        });
+    })
     }
 
+
+    componentDidMount() {
+        this.getTweets();
+      }
+    
     onChangeTweet(e){
         this.setState({tweet: e.target.value});
     }
@@ -113,16 +132,6 @@ export class Main extends React.Component{
 
         e.preventDefault();
     }
-    
-
-    ShowMenu(){
-        if(this.state.menu === true){
-            this.setState({menu: false});
-        }else{
-            this.setState({menu: true});
-        }
-    }
-
     isAuthenticated() {
         const token =  localStorage.getItem('access');
         /*if(token && token.length > 10 ){
@@ -134,77 +143,53 @@ export class Main extends React.Component{
         localStorage.removeItem('access');
         return <Redirect to ={{pathname: '/'}} />
     }
-    
     render(){
         const isAlreadyAuthenticated = this.isAuthenticated();
         return(
-            <MuiThemeProvider>
-              {!isAlreadyAuthenticated ?
-              <Redirect to ={{pathname: '/'}} /> :  (
-              
-           
-            <nav className="navbar navbar-expand-lg navbar-light bg-dark">
-                <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
-                    <span className="navbar-toggler-icon"></span>
-                </button>
-            <a className="navbar-brand text-light" href="#">TWIT</a>
-
-            <div className="collapse navbar-collapse" id="navbarTogglerDemo03">
-                <ul className="navbar-nav mr-auto mt-2 mt-lg-0">
-                <li className="nav-item ">
-                    <a className="nav-link text-light" href="#">Beranda</a>
-                </li>
-                <li className="nav-item">
-                    <a className="nav-link text-light" href="#">Notifikasi</a>
-                </li>
-                <li className="nav-item">
-                    <a className="nav-link text-light" href="#">Pesan</a>
-                </li>
-                </ul>
-                <form className="form-inline my-2 my-lg-0">
-                <input className="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" />
-                <button className="btn btn-success my-2 my-sm-0" type="submit">Search</button>&nbsp;
-                </form>
-                <form onSubmit={this.isLogout}>
-                    <button className="btn btn-danger my-2 my-sm-0" >Log Out</button>
-                </form>
-            </div>
-            </nav>
-                )}
-
+            <div>
+            {!isAlreadyAuthenticated ?
+              <Redirect to ={{pathname: '/'}} /> : 
                 <div>
-                <p> avatar </p>
+
+                <Grid container>
+        <ItemGrid xs={12} sm={12} md={4}>
+        <ProfileCard
+            avatar="http://fanaru.com/random/image/thumb/160391-random-seriously-face-avatar.jpg"
+            subtitle="john"
+            title="John"
+            description="I am the great John, duh."
+          />
+        </ItemGrid>
+      </Grid>
+      
                   <div className="followWrapper">
-                       <p> people </p>
+                  {this.state.people}
                     </div>
-                <div className="tweetWrapper">
+                    
+                    <div className="tweetWrapper">
                     <Card>
                     <div className="inputWrapper">
                         <form name="myForm" method="POST" onSubmit={(e) => this.handleSubmit(e)}encType="multipart/form-data">
 
                              <div className="form-group">
-                                <label for="comment">Write Something</label>
+                                <label>Write Something</label>
                                 <textarea 
                                     className="form-control txtarea" rows="4" id="comment" name="tweetText" 
-                                    value={this.state.tweet} onChange={this.onChangeTweet} required maxlength="303">
+                                    value={this.state.tweet} onChange={this.onChangeTweet} required>
                                 </textarea>
                             </div>
 
-                            <input type="file" id="profilePictures" name="file" ref="file" 
-                                onClick = {() => this.clearFile()} 
-                            />
+                            <input type="file" id="profilePictures" name="file" ref="file" />
                             <button type="submit" id="clear">Tweet</button>
                         </form>
                     </div>
                     </Card>
                  </div>
                  {this.state.tweets}
-                 
-             </div> 
-            </MuiThemeProvider>
+                </div>
+              }
+            </div>
         );
     }
 }
-
-
 export default Main;

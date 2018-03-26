@@ -8,6 +8,7 @@ import "assets/css/material-dashboard-react.css";
 import indexRoutes from "routes/index.jsx";
 
 import {Login} from './views/Login/Login';
+import {Main} from './views/Main/Main';
 
 const hist = createBrowserHistory();
 
@@ -15,9 +16,10 @@ ReactDOM.render(
   <Router history={hist}>
     <Switch>
       <Route path="/login" component={Login}/>
-      {indexRoutes.map((prop, key) => {
-        return <Route path={prop.path} component={prop.component} key={key} />;
-      })}
+    {indexRoutes.map((prop, key) => {
+       return <Route path={prop.path} component={prop.component} key={key} />;
+    })
+    }
     </Switch>
   </Router>,
   document.getElementById("root")
