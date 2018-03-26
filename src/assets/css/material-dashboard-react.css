@@ -221,10 +221,15 @@ footer ul li a:hover {
 }
 #loginContainer{
     margin:0 auto;
-    margin-top: 10%;
+    margin-top: 5%;
     width: 500px;
     text-align: center;
 }
-#loginContainer MuiCardHeader-root-131 RegularCard-cardHeader-94 RegularCard-purpleCardHeader-100{
-    background: blue;
+.logoContainer img{
+    width: 300px;
+    margin-left: -170px;
+}
+
+.loginBody{
+    background-image: url('https://wallpapers.walldevil.com/wallpapers/a52/preview/wallpapers-toronto-sunset-city-wallpaper-cities-widescreen-images.jpg');
 }

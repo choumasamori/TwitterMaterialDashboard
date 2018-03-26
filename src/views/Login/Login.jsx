@@ -15,15 +15,6 @@ import logo from "assets/img/logo.png";
 
 import Checkbox from 'material-ui/Checkbox';
 
-
-import 'bootstrap/dist/css/bootstrap.css';
-import 'font-awesome/css/font-awesome.min.css';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import 'mdbreact/dist/css/mdb.css';
-
-
-
-
 const styles = {
   block: {
     maxWidth: 250,
@@ -69,7 +60,7 @@ export class Login extends React.Component{
   }
   render(){
     return (
-      <div>
+      <div className="loginBody">
       {this.state.isLogIn ?  <Redirect to={{pathname: '/dashboard'}}/> : 
       <div id="loginContainer">
       <div className='logoContainer'>
