@@ -1,11 +1,10 @@
 import React from 'react';
 import TextField from 'material-ui/TextField';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
-import {Card, CardActions, CardHeader, CardMedia, CardTitle, CardText} from 'material-ui/Card';
+import Card,{CardActions, CardHeader, CardMedia, CardTitle, CardText} from 'material-ui/Card';
 import './Main.css';
 import {List, ListItem} from 'material-ui/List';
 import Divider from 'material-ui/Divider';
-import AppBar from 'material-ui/AppBar';
 import {Avatar} from './Avatar';
 import {People} from './People';
 //bootstrap & jquery
@@ -53,14 +52,14 @@ export class Main extends React.Component{
             return(
                 <div key={item.id} className="tweetListWrapper">
                     <Card>
-                    <CardHeader title="John" subtitle="john" avatar="http://fanaru.com/random/image/thumb/160391-random-seriously-face-avatar.jpg" />
-                    <Divider />
-                    <div className="tweetDetail">
-                        <img src={item.thumbnail_url}/>
-                        <p>
-                           {item.summary}
-                        </p>
-                    </div>
+                        <CardHeader title="John" subtitle="john" avatar="http://fanaru.com/random/image/thumb/160391-random-seriously-face-avatar.jpg" />
+                        <Divider />
+                        <div className="tweetDetail">
+                            <img src={item.thumbnail_url}/>
+                            <p>
+                            {item.summary}
+                            </p>
+                        </div>
                     </Card>
                  </div>
             );
@@ -173,11 +172,10 @@ export class Main extends React.Component{
             </nav>
                 )}
 
-            {this.state.load ? 
                 <div>
-                <Avatar />
+                <p> avatar </p>
                   <div className="followWrapper">
-                        <People />
+                       <p> people </p>
                     </div>
                 <div className="tweetWrapper">
                     <Card>
@@ -202,13 +200,11 @@ export class Main extends React.Component{
                  </div>
                  {this.state.tweets}
                  
-             </div> : 
-                  <center> 
-                  </center>
-                }
+             </div> 
             </MuiThemeProvider>
         );
     }
 }
+
 
 export default Main;
