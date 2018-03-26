@@ -19,7 +19,8 @@ function RegularCard({ ...props }) {
     cardTitle,
     cardSubtitle,
     content,
-    footer
+    footer,
+    styleHeader,
   } = props;
   const plainCardClasses = cx({
     [" " + classes.cardPlain]: plainCard
@@ -30,6 +31,7 @@ function RegularCard({ ...props }) {
   return (
     <Card className={classes.card + plainCardClasses}>
       <CardHeader
+        style={styleHeader}
         classes={{
           root:
             classes.cardHeader +

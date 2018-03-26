@@ -11,29 +11,18 @@ import {
 } from "components";
 
 import avatar from "assets/img/faces/marc.jpg";
+import logo from "assets/img/logo.png";
+
 
 import Checkbox from 'material-ui/Checkbox';
 
-
-import 'bootstrap/dist/css/bootstrap.css';
-import 'font-awesome/css/font-awesome.min.css';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import 'mdbreact/dist/css/mdb.css';
-
-import 'assets/css/style.css';
-
-
-import Background from '../../assets/img/k2.jpg';
+import Background from '../../assets/img/background.jpg';
 
 
 var sectionStyle = {
-  width: "100%",
-  height: "100%",
-  backgroundSize: "100%",
-  overFlow: "hidden",
+  backgroundSize: "cover",
   backgroundImage: `url(${Background})`
 };
-
 
 
 export class Login extends React.Component{
@@ -41,16 +30,16 @@ export class Login extends React.Component{
     super(props);
     this.state={
       isLogIn: false,
-      email: '',
+      username: '',
       password: '',
     };
-    this.onChangeEmail = this.onChangeEmail.bind(this);
+    this.onChangeUsername = this.onChangeUsername.bind(this);
     this.onChangePassword = this.onChangePassword.bind(this);
     this.handleClick = this.handleClick.bind(this);
   }
-  onChangeEmail(event){
+  onChangeUsername(event){
     this.setState({
-      email: event.target.value,
+      username: event.target.value,
     });
   }
   onChangePassword(event){
@@ -59,39 +48,43 @@ export class Login extends React.Component{
     });
   }
   handleClick(){
-    if(this.state.email=='john'&&this.state.password=='123456'){
+    if(this.state.username=='john'&&this.state.password=='123456'){
       this.setState({
         isLogIn: true
       });
     }else{
       this.setState({
-        email: '',
+        username: '',
         password: '',
       });
     }
   }
   render(){
     return (
-      <div style={sectionStyle}>
+      <div className="loginBody" style={sectionStyle}>
       {this.state.isLogIn ?  <Redirect to={{pathname: '/dashboard'}}/> : 
       <div id="loginContainer">
+      <div className='logoContainer'>
+        <img src={logo} />
+      </div>
       <Grid container>
         <ItemGrid xs={12} sm={12} md={8}>
           <RegularCard
-            cardTitle="Admin Login"
+            cardTitle="EARLY ALERT MANAGEMENT SYSTEM"
             cardSubtitle=""
+            styleHeader={{background: '#760403'}}
             content={
               <div>
                 <Grid container>
                   <ItemGrid xs={12} sm={12} md={4}>
                     <CustomInput
-                      labelText="Email address"
-                      id="email-address"
+                      labelText="Username"
+                      id="username"
                       formControlProps={{
                         fullWidth: true
                       }}
-                      value={this.state.email}
-                      onChange={this.onChangeEmail}
+                      value={this.state.username}
+                      onChange={this.onChangeUsername}
                     />
                   </ItemGrid>
                 </Grid>
@@ -114,7 +107,7 @@ export class Login extends React.Component{
                   />Remember Me
               </div>
             }
-            footer={<Button color="primary" onClick={this.handleClick}>Log In</Button>}
+            footer={<Button style={{background: '#E63313'}} color="primary" onClick={this.handleClick}>Log In</Button>}
           />
         </ItemGrid>
       </Grid>

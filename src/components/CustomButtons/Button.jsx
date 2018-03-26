@@ -14,6 +14,7 @@ function RegularButton({ ...props }) {
     fullWidth,
     disabled,
     onClick,
+    style,
     ...rest
   } = props;
   const btnClasses = cx({
@@ -23,7 +24,7 @@ function RegularButton({ ...props }) {
     [classes.disabled]: disabled
   });
   return (
-    <Button {...rest} className={classes.button + " " + btnClasses} onClick={onClick}>
+    <Button {...rest} style={style} className={classes.button + " " + btnClasses} onClick={onClick}>
       {children}
     </Button>
   );

@@ -35,6 +35,7 @@ function CustomInput({ ...props }) {
   });
   return (
     <FormControl
+    fullWidth={true}
       {...formControlProps}
       className={formControlProps.className + " " + classes.formControl}
     >
@@ -54,6 +55,7 @@ function CustomInput({ ...props }) {
           underline: classes.underline,
           inkbar: inkbarClasses
         }}
+        fullWidth={true}
         id={id}
         {...inputProps}
         value={value}
