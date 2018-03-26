@@ -231,18 +231,21 @@ footer ul li a:hover {
 }
 #loginContainer{
     margin:0 auto;  
-    width: 500px;
+    width: 300px;
+    height: auto;
     text-align: center;
 }
 .logoContainer img{
     width: 300px;
-    margin-left: -170px;
 }
 
 .loginBody{
     background-image: url('https://www.thewallpapers.org/photo/35740/sunset-in-city.jpg'); 
     height: 100%;
     background-size: cover;
+}
+#checkbox{
+    text-align: left;
 }
 body,
     html {
