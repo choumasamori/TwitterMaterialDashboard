@@ -7,6 +7,7 @@ import Maps from "views/Maps/Maps.jsx";
 import NotificationsPage from "views/Notifications/Notifications.jsx";
 import Login from "views/Login/Login.jsx"
 import TableTest from "views/TableTest/TableTest.jsx"
+import {Main} from 'views/Main/Main.js';
 
 import {
   Dashboard,
@@ -21,60 +22,11 @@ import {
 
 const appRoutes = [
   {
-    path: "/dashboard",
-    sidebarName: "Dashboard",
-    navbarName: "Material Dashboard",
+    path: "/main",
+    sidebarName: "Main",
+    navbarName: "TWITTER",
     icon: Dashboard,
-    component: DashboardPage
-  },
-  {
-    path: "/user",
-    sidebarName: "User Profile",
-    navbarName: "Profile",
-    icon: Person,
-    component: UserProfile
-  },
-  {
-    path: "/table",
-    sidebarName: "Table List",
-    navbarName: "Table List",
-    icon: ContentPaste,
-    component: TableList
-  },
-  {
-    path: "/typography",
-    sidebarName: "Typography",
-    navbarName: "Typography",
-    icon: LibraryBooks,
-    component: Typography
-  },
-  {
-    path: "/icons",
-    sidebarName: "Icons",
-    navbarName: "Icons",
-    icon: BubbleChart,
-    component: Icons
-  },
-  {
-    path: "/maps",
-    sidebarName: "Maps",
-    navbarName: "Map",
-    icon: LocationOn,
-    component: Maps
-  },
-  {
-    path: "/notifications",
-    sidebarName: "Notifications",
-    navbarName: "Notifications",
-    icon: Notifications,
-    component: NotificationsPage
-  },
-  {
-    path: "/tabletest",
-    sidebarName: "Table Test",
-    navbarName: "Table Test",
-    icon: Fingerprint,
-    component: TableTest
+    component: Main
   },
   { redirect: true, path: "/", to: "/login", navbarName: "Redirect" }
 ];
