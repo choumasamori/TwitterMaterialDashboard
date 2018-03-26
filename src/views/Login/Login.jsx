@@ -16,6 +16,8 @@ import logo from "assets/img/logo.png";
 
 import Checkbox from 'material-ui/Checkbox';
 
+import TextField from 'material-ui/TextField';
+
 import Background from '../../assets/img/background.jpg';
 
 
@@ -63,12 +65,12 @@ export class Login extends React.Component{
     return (
       <div className="loginBody" style={sectionStyle}>
       {this.state.isLogIn ?  <Redirect to={{pathname: '/dashboard'}}/> : 
-      <div id="loginContainer">
-      <div className='logoContainer'>
+      <div id="loginContainer"><br/> <br/> <br/> <br/><br/>
+       <div className='logoContainer'>
         <img src={logo} />
       </div>
       <Grid container>
-        <ItemGrid xs={12} sm={12} md={8}>
+        <ItemGrid xs={12} sm={12} md={12}>
           <RegularCard
             cardTitle="EARLY ALERT MANAGEMENT SYSTEM"
             cardSubtitle=""
@@ -76,7 +78,7 @@ export class Login extends React.Component{
             content={
               <div>
                 <Grid container>
-                  <ItemGrid xs={12} sm={12} md={4}>
+                  <ItemGrid xs={12} sm={12} md={12}>
                     <CustomInput
                       labelText="Username"
                       id="username"
@@ -90,7 +92,7 @@ export class Login extends React.Component{
                 </Grid>
 
                 <Grid container>
-                  <ItemGrid xs={12} sm={12} md={4}>
+                  <ItemGrid xs={12} sm={12} md={12}>
                     <CustomInput
                       labelText="Password"
                       id="first-name"
