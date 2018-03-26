@@ -220,7 +220,11 @@ footer ul li a:hover {
     }
 }
 #loginContainer{
-    margin-left: 25%;
+    margin:0 auto;
     margin-top: 10%;
-    width: auto;
+    width: 500px;
+    text-align: center;
+}
+#loginContainer MuiCardHeader-root-131 RegularCard-cardHeader-94 RegularCard-purpleCardHeader-100{
+    background: blue;
 }
