@@ -29,6 +29,10 @@ import {
 import Checkbox from 'material-ui/Checkbox';
 
 
+/* material ui next*/
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
+import { CircularProgress } from 'material-ui/Progress';
+
 var sectionStyle = {
   backgroundSize: "cover",
   backgroundImage: `url(${Background})`
@@ -42,6 +46,7 @@ export class Login extends React.Component{
       isLogIn: false,
       username: '',
       password: '',
+      accessToken: ''
     };
     this.onChangeUsername = this.onChangeUsername.bind(this);
     this.onChangePassword = this.onChangePassword.bind(this);
@@ -57,81 +62,118 @@ export class Login extends React.Component{
       password: event.target.value,
     });
   }
+
   handleClick(){
     if(this.state.username=='john'&&this.state.password=='123456'){
       this.setState({
-        isLogIn: true
-      });
-    }else{
-      this.setState({
-        username: '',
-        password: '',
-      });
-    }
+              isLoggedIn: true
+            });
+          }
+
+          fetch('https://test-mobile.neo-fusion.com/auth/login', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          'username': 'john',
+          'password': '123456',
+    })
+    
+  }).then((response) => response.json())
+  .then((data) => {localStorage.setItem('access', JSON.stringify(data).substring(17,53))})
+  .catch((error) => {
+    console.error(error);
+  });
+
+    //alert(this.state.username);
+    //alert(this.state.password);
+    //alert(localStorage.getItem('access'));
   }
+
+  isAuthenticated() {
+    const token =  localStorage.getItem('access');
+    /*if(token && token.length > 10 ){
+        return true;
+    }*/
+    return token && token.length > 10;
+}
+
+
   render(){
+    const isAlreadyAuthenticated = this.isAuthenticated();
     return (
+
       <div className="loginBody" style={sectionStyle}>
-      {this.state.isLogIn ?  <Redirect to={{pathname: '/dashboard'}}/> : 
-      <div class="outer">
-  <div class="middle">
-    <div class="inner">
-      <div id="loginContainer">
-       <div className='logoContainer'>
-        <img src={logo} />
-      </div>
-      <Grid container>
-        <ItemGrid xs={12} sm={12} md={12}>
-          <RegularCard
-            cardTitle="EARLY ALERT MANAGEMENT SYSTEM"
-            cardSubtitle=""
-            styleHeader={{background: '#760403'}}
-            content={
-              <div>
-                <Grid container>
-                  <ItemGrid xs={12} sm={12} md={12}>
-                    <CustomInput
-                      labelText="Username"
-                      id="username"
-                      formControlProps={{
-                        fullWidth: true
-                      }}
-                      value={this.state.username}
-                      onChange={this.onChangeUsername}
-                    />
-                  </ItemGrid>
-                </Grid>
-                <Grid container>
-                  <ItemGrid xs={12} sm={12} md={12}>
-                    <CustomInput
-                      labelText="Password"
-                      id="first-name"
-                      formControlProps={{
-                        fullWidth: true
-                      }}
-                      value={this.state.password}
-                      type="password"
-                      onChange={this.onChangePassword}
-                    />
-                  </ItemGrid>
-                </Grid>
+        {isAlreadyAuthenticated ?
+          <Redirect to ={{pathname: '/main'}} /> :  (
+          <Redirect to ={{pathname: '/login'}} />
+         )}
 
-                <FormControl component="fieldset" id = "checkbox">
-                  <FormGroup>
-                    <FormControlLabel
-                      control={
-                        <Checkbox
-                          value="Remember Me"
+      {this.state.isLogIn ?  <Redirect to={{pathname: '/login'}}/> : 
+    <div class="outer">
+      <div class="middle">
+        <div class="inner">
+          <div id="loginContainer">
+          <div className='logoContainer'>
+            <img src={logo} />
+          </div>
+          <Grid container>
+            <ItemGrid xs={12} sm={12} md={12}>
+              <RegularCard
+                cardTitle="EARLY ALERT MANAGEMENT SYSTEM"
+                cardSubtitle=""
+                styleHeader={{background: '#760403'}}
+                content={
+                  <div>
+                    <form onSubmit={this.handleClick}>
+                      <Grid container>
+                        <ItemGrid xs={12} sm={12} md={12}>
+                          <CustomInput
+                            labelText="Username"
+                            id="username"
+                            formControlProps={{
+                              fullWidth: true
+                            }}
+                            value={this.state.username}
+                            onChange={this.onChangeUsername}
+                          />
+                        </ItemGrid>
+                      </Grid>
+                      <Grid container>
+                        <ItemGrid xs={12} sm={12} md={12}>
+                          <CustomInput
+                            labelText="Password"
+                            id="first-name"
+                            formControlProps={{
+                              fullWidth: true
+                            }}
+                            value={this.state.password}
+                            type="password"
+                            onChange={this.onChangePassword}
+                            
+                          />
+                        </ItemGrid>
+                      </Grid>
+
+                    <FormControl component="fieldset" id = "checkbox">
+                      <FormGroup>
+                        <FormControlLabel
+                          control={
+                            <Checkbox
+                              value="Remember Me"
+                              
+                            />
+                          }
+                          label="Remember Me"
+                          required
                         />
-                      }
-                      label="Remember Me"
-                    />
-                    </FormGroup>
-                </FormControl>
-
+                        </FormGroup>
+                    </FormControl>
+                    <Button type="submit" >Log In</Button>
+                    </form>
               </div>
             }
-            footer={<Button style={{background: '#E63313'}} color="primary" onClick={this.handleClick}>Log In</Button>}
           />
         </ItemGrid>
       </Grid>
