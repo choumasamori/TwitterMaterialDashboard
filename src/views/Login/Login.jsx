@@ -105,8 +105,10 @@ export class Login extends React.Component{
                     />
                   </ItemGrid>
                 </Grid>
+                <div id="checkbox">
                   <Checkbox
                   />Remember Me
+                </div>
               </div>
             }
             footer={<Button style={{background: '#E63313'}} color="primary" onClick={this.handleClick}>Log In</Button>}
