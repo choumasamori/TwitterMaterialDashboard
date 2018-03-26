@@ -70,13 +70,6 @@ const appRoutes = [
     component: NotificationsPage
   },
   {
-    path: "/login",
-    sidebarName: "null",
-    navbarName: "null",
-    icon: Fingerprint,
-    component: Login
-  },
-  {
     path: "/tabletest",
     sidebarName: "Table Test",
     navbarName: "Table Test",

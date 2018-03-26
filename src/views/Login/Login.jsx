@@ -11,9 +11,21 @@ import {
 
 import avatar from "assets/img/faces/marc.jpg";
 
+import Checkbox from 'material-ui/Checkbox';
+
+
+const styles = {
+  block: {
+    maxWidth: 250,
+  },
+  checkbox: {
+    marginBottom: 16,
+  },
+};
+
 export class Login extends React.Component{
   componentDidMount(){
-    this.hideEverything();
+    
   }
   hideEverything(){
     document.getElementById("sidebar").style.display = "none";
@@ -22,11 +34,11 @@ export class Login extends React.Component{
   }
   render(){
     return (
-      <div>
+      <div id="loginContainer">
         <Grid container>
           <ItemGrid xs={12} sm={12} md={8}>
             <RegularCard
-              cardTitle="Admin Login"
+              cardTitle="EARLY ALERT MANAGEMENT SYSTEM"
               cardSubtitle=""
               content={
                 <div>
@@ -35,8 +47,8 @@ export class Login extends React.Component{
   
                     <ItemGrid xs={12} sm={12} md={4}>
                       <CustomInput
-                        labelText="Email address"
-                        id="email-address"
+                        labelText="Username"
+                        id="username"
                         formControlProps={{
                           fullWidth: true
                         }}
@@ -55,6 +67,10 @@ export class Login extends React.Component{
                       />
                     </ItemGrid>
                   </Grid>
+
+                <Checkbox
+                  label="DSASSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSDADSADA"
+                />
   
                 </div>
               }
