@@ -75,16 +75,6 @@ export class Main extends React.Component{
 
     }
 
-
-    componentDidMount() {
-        this.timer = setTimeout(() => this.progress(35), 100);
-        this.getTweets();
-      }
-
-    componentWillMount(){
-        clearTimeout(this.timer);
-    }
-    
     onChangeTweet(e){
         this.setState({tweet: e.target.value});
     }
@@ -125,16 +115,6 @@ export class Main extends React.Component{
         e.preventDefault();
     }
     
-
-    progress(completed){
-        if(completed > 100){
-            this.setState({completed: 100, load: true});
-        }else{
-            this.setState({completed});
-            const diff = Math.random() * 10;
-            this.timer = setTimeout(() => this.progress(completed + diff), 100);
-        }
-    }
 
     ShowMenu(){
         if(this.state.menu === true){
@@ -195,7 +175,7 @@ export class Main extends React.Component{
 
             {this.state.load ? 
                 <div>
-                  <Avatar />
+                <Avatar />
                   <div className="followWrapper">
                         <People />
                     </div>
