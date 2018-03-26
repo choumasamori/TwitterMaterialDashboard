@@ -1,7 +1,7 @@
 import React, {Component} from "react";
 import { Grid } from "material-ui";
 
-import { RegularCard, Table, ItemGrid } from "components";
+import { RegularCard, Table, ItemGrid, Button } from "components";
 import './TableTest.css';
 
 
@@ -47,10 +47,14 @@ function contentClass(isShow) {
 		}
   }
 
+  test = () => {
+
+  }
+
   render(){
     return(
    <Grid container>
-     <button onClick={()=>this.showDetails("table1")} type="submit">Show/Hide</button>
+     <Button color="primary" onClick = {() => this.showDetails("table1")} type="submit">Show/Hide</Button>
         <ItemGrid xs={12} sm={12} md={12}>
         <div id="table1">
           <RegularCard
@@ -75,7 +79,7 @@ function contentClass(isShow) {
         </ItemGrid>
 
 
-      <button onClick={()=>this.showDetails("table2")} type="submit">Show/Hide</button>
+      <Button color="primary" onClick={()=>this.showDetails("table2")} type="submit">Show/Hide</Button>
       <ItemGrid xs={12} sm={12} md={12}>
       <div id="table2">
         <RegularCard

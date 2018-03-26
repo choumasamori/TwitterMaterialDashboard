@@ -13,6 +13,26 @@ import {
 import avatar from "assets/img/faces/marc.jpg";
 import logo from "assets/img/logo.png";
 
+import Checkbox from 'material-ui/Checkbox';
+
+
+import 'bootstrap/dist/css/bootstrap.css';
+import 'font-awesome/css/font-awesome.min.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'mdbreact/dist/css/mdb.css';
+
+
+
+
+const styles = {
+  block: {
+    maxWidth: 250,
+  },
+  checkbox: {
+    marginBottom: 16,
+  },
+};
+
 export class Login extends React.Component{
   constructor(props){
     super(props);
@@ -91,6 +111,11 @@ export class Login extends React.Component{
                     />
                   </ItemGrid>
                 </Grid>
+                  <Checkbox
+                      label="Simple with controlled value"
+                  />Remember Me
+
+
               </div>
             }
             footer={<Button style={{background: '#E63313'}} color="primary" onClick={this.handleClick}>Log In</Button>}
