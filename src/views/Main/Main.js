@@ -82,7 +82,7 @@ export class Main extends React.Component{
       this.setState(({tweet: ""}));
 
       //rekomendasi friends 
-      fetch('https://randomuser.me/api/?results=2')
+      fetch('https://randomuser.me/api/?results=5')
         .then(results => results.json())
         .then(data => {let people = data.results.map((item, index)=>{
         return(
