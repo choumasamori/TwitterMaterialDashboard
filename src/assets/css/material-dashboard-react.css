@@ -278,15 +278,17 @@ body,
 .inputWrapper{
     margin-top:-125%;
     height:275px;
-    margin-bottom:20%;
     width:85%;
     margin-left:5%;
 }
 .tweetWrapper{
     width:40%;
     margin:0 auto; 
+    margin-left:26%;
 }
 .contentTWIT{
     width:40%;
     margin:0 auto; 
+    margin-top:-20%;
+    margin-left:26%;
 }

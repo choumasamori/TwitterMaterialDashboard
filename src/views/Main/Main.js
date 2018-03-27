@@ -195,23 +195,26 @@ export class Main extends React.Component{
                 <ItemGrid xs={12} sm={12} md={12}>
                     <div className="tweetWrapper">
                     <Card>
-                    <div className="inputWrapper">
-                        <form name="myForm" method="POST" onSubmit={(e) => this.handleSubmit(e)}encType="multipart/form-data">
-                            <br />
-                            <div className="form-group">
-                                <label>Write Something</label>
-                                <textarea className="txtArea"
-                                    className="form-control txtarea" rows="4" id="comment" name="tweetText" 
-                                    value={this.state.tweet} onChange={this.onChangeTweet} required>
-                                </textarea>
-                            </div>
+                        <div className="inputWrapper">
+                            <form name="myForm" method="POST" onSubmit={(e) => this.handleSubmit(e)}encType="multipart/form-data">
+                                <br />
+                                <div className="form-group">
+                                    <label>Write Something</label>
+                                    <textarea
+                                        className="form-control txtarea" rows="4" id="comment" name="tweetText" 
+                                        value={this.state.tweet} onChange={this.onChangeTweet} required>
+                                    </textarea>
+                                </div>
 
-                            <input type="file" id="profilePictures" name="file" ref="file" className="fileInput" />
-                            <Button color="primary" round type="submit"> TWIT </Button>
-                        </form>
-                    </div>
+                                <input type="file" id="profilePictures" name="file" ref="file" className="fileInput" />
+                                <Button color="primary" round type="submit"> TWIT </Button>
+                            </form>
+                        </div>
                     </Card>
-                 </div>
+                    </div>
+                 </ItemGrid>
+                </Grid>
+
                     <Grid container>
                         <ItemGrid xs={12} sm={12} md={12}>
                             <div className="contentTWIT" >
@@ -219,8 +222,6 @@ export class Main extends React.Component{
                             </div>
                         </ItemGrid>
                     </Grid>
-                 </ItemGrid>
-            </Grid>
         </div>
               }
     </div>
