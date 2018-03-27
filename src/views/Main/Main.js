@@ -26,6 +26,11 @@ import {
     FormHelperText,
   } from 'material-ui/Form';
 
+  //bootstrap & jquery
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'jquery/dist/jquery.min.js';
+
+
 export class Main extends React.Component{
     constructor(props){
         super(props);
@@ -76,25 +81,26 @@ export class Main extends React.Component{
       });
       this.setState(({tweet: ""}));
 
-      fetch('https://randomuser.me/api/?results=5')
+      //rekomendasi friends 
+      fetch('https://randomuser.me/api/?results=2')
         .then(results => results.json())
         .then(data => {let people = data.results.map((item, index)=>{
-            return(
-                <div key={index} className="follow">
-                <ItemGrid xs={12} sm={12} md={4}>
-          <ProfileCard
-            avatar={item.picture.medium}
-            subtitle={item.login.username}
-            title={item.name.first}
-            footer={
-              <Button color="primary" round>
-                Follow
-              </Button>
-            }
-          />
-        </ItemGrid>
+        return(
+        <div key={index}>
+            <ItemGrid xs={12} sm={12} md={12}>
+                <ProfileCard
+                    avatar={item.picture.medium}
+                    subtitle={item.login.username}
+                    title={item.name.first}
+                    footer={
+                        <Button color="primary" round>
+                            Follow
+                        </Button>
+                    }
+                />
+            </ItemGrid>
         </div>
-            );
+        );
         });
         this.setState({
             people: people,
@@ -160,32 +166,33 @@ export class Main extends React.Component{
     render(){
         const isAlreadyAuthenticated = this.isAuthenticated();
         return(
-            <div>
+    <div>
             {!isAlreadyAuthenticated ?
-              <Redirect to ={{pathname: '/'}} /> : 
-                <div>
+            <Redirect to ={{pathname: '/'}} /> : 
+        <div>
+        <Grid container>
+            <div className="profile">
+            <ItemGrid xs={10} sm={10} md={10}>
+                <ProfileCard 
+                    avatar="http://fanaru.com/random/image/thumb/160391-random-seriously-face-avatar.jpg"
+                    subtitle="john"
+                    title="John"
+                    description="I am the great John, duh."
+                />
+            </ItemGrid>
+            </div>
+        </Grid>
 
-                <Grid container>
-        <ItemGrid xs={4} sm={4} md={4}>
-        <ProfileCard
-            avatar="http://fanaru.com/random/image/thumb/160391-random-seriously-face-avatar.jpg"
-            subtitle="john"
-            title="John"
-            description="I am the great John, duh."
-          />
-        </ItemGrid>
-      </Grid>
-
-                  <div className="followWrapper">
+                <div className="followWrapper">
                   {this.state.people}
-                    </div>
+                </div>
                     
                     <div className="tweetWrapper">
                     <Card>
                     <div className="inputWrapper">
                         <form name="myForm" method="POST" onSubmit={(e) => this.handleSubmit(e)}encType="multipart/form-data">
-
-                             <div className="form-group">
+                            <br />
+                            <div className="form-group">
                                 <label>Write Something</label>
                                 <textarea 
                                     className="form-control txtarea" rows="4" id="comment" name="tweetText" 
@@ -193,16 +200,16 @@ export class Main extends React.Component{
                                 </textarea>
                             </div>
 
-                            <input type="file" id="profilePictures" name="file" ref="file" />
-                            <button type="submit" id="clear">Tweet</button>
+                            <input type="file" id="profilePictures" name="file" ref="file" className="fileInput" />
+                            <Button color="primary" round type="submit"> TWIT </Button>
                         </form>
                     </div>
                     </Card>
                  </div>
                  {this.state.tweets}
-                </div>
+        </div>
               }
-            </div>
+    </div>
         );
     }
 }
