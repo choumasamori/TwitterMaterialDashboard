@@ -121,7 +121,7 @@ export class Login extends React.Component{
           <Grid container>
             <ItemGrid xs={12} sm={12} md={12}>
               <RegularCard
-                cardTitle="EARLY ALERT MANAGEMENT SYSTEM"
+                cardTitle="REACT TWITTER API"
                 cardSubtitle=""
                 styleHeader={{background: '#760403'}}
                 content={
@@ -155,7 +155,6 @@ export class Login extends React.Component{
                           />
                         </ItemGrid>
                       </Grid>
-
                     <FormControl component="fieldset" id = "checkbox">
                       <FormGroup>
                         <FormControlLabel

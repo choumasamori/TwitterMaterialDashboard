@@ -171,28 +171,18 @@ export class Main extends React.Component{
             <Redirect to ={{pathname: '/'}} /> : 
         <div>
         <Grid container>
-            <div className="profile">
-            <ItemGrid xs={10} sm={10} md={10}>
-                <ProfileCard 
-                    avatar="http://fanaru.com/random/image/thumb/160391-random-seriously-face-avatar.jpg"
-                    subtitle="john"
-                    title="John"
-                    description="I am the great John, duh."
-                />
-            </ItemGrid>
-            </div>
-        </Grid>
-
-        <Grid container>
-            <ItemGrid xs={10} sm={10} md={10}>
-                <div className="followWrapper">
-                  {this.state.people} 
+            <ItemGrid xs={4} sm={2} md={2}>
+                <div className="profile">
+                    <ProfileCard 
+                        avatar="http://fanaru.com/random/image/thumb/160391-random-seriously-face-avatar.jpg"
+                        subtitle="john"
+                        title="John"
+                        description="I am the great John, duh."
+                    />
                 </div>
             </ItemGrid>
-        </Grid>
                     
-            <Grid container>
-                <ItemGrid xs={12} sm={12} md={12}>
+            <ItemGrid xs={12} sm={6} md={6}>
                     <div className="tweetWrapper">
                     <Card>
                         <div className="inputWrapper">
@@ -201,7 +191,7 @@ export class Main extends React.Component{
                                 <div className="form-group">
                                     <label>Write Something</label>
                                     <textarea
-                                        className="form-control txtarea" rows="4" id="comment" name="tweetText" 
+                                        className="form-control" rows="5" id="comment" name="tweetText" 
                                         value={this.state.tweet} onChange={this.onChangeTweet} required>
                                     </textarea>
                                 </div>
@@ -212,16 +202,22 @@ export class Main extends React.Component{
                         </div>
                     </Card>
                     </div>
-                 </ItemGrid>
-                </Grid>
+                </ItemGrid>
 
-                    <Grid container>
-                        <ItemGrid xs={12} sm={12} md={12}>
-                            <div className="contentTWIT" >
-                                {this.state.tweets}
-                            </div>
-                        </ItemGrid>
-                    </Grid>
+                 
+                 <ItemGrid xs={12} sm={12} md={8}>
+                    <div className="contentTWIT">
+                        {this.state.tweets}
+                     </div>
+                 </ItemGrid>
+
+                <ItemGrid xs={6} sm={4} md={4}>
+                    <div className="followWrapper">
+                        {this.state.people} 
+                    </div>
+                </ItemGrid>
+
+            </Grid>
         </div>
               }
     </div>

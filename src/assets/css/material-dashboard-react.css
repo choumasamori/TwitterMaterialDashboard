@@ -236,7 +236,7 @@ footer ul li a:hover {
     text-align: center;
 }
 .logoContainer img{
-    width: 300px;
+    width: 150px;
 }
 
 .loginBody{
@@ -272,28 +272,17 @@ body,
     }
 
 .followWrapper{
-    float:right;
-    margin-right:-20%;    
-    width:30%;
-    margin-top:-32%;
+    margin-right:20%;    
+    margin-top:-87%;
 }
 .profile{
-    margin-top:5%;
+    margin-top:50%;
 }
 .inputWrapper{
-    margin-top:-125%;
-    height:275px;
-    width:85%;
+    margin-top:20%;
     margin-left:5%;
-}
-.tweetWrapper{
-    width:40%;
-    margin:0 auto; 
-    margin-left:26%;
+    width:90%;
 }
 .contentTWIT{
-    width:40%;
-    margin:0 auto; 
-    margin-top:-20%;
-    margin-left:26%;
+    margin-top:2%;
 }
