@@ -164,7 +164,7 @@ export class Main extends React.Component{
             {!isAlreadyAuthenticated ?
               <Redirect to ={{pathname: '/'}} /> : 
                 <div>
-
+                    <div className="avatarWrapper">
                 <Grid container>
         <ItemGrid xs={4} sm={4} md={4}>
         <ProfileCard
@@ -175,7 +175,7 @@ export class Main extends React.Component{
           />
         </ItemGrid>
       </Grid>
-
+    </div>
                   <div className="followWrapper">
                   {this.state.people}
                     </div>
