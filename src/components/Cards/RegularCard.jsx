@@ -4,7 +4,7 @@ import {
   Card,
   CardContent,
   CardHeader,
-  CardActions
+  CardActions,
 } from "material-ui";
 import PropTypes from "prop-types";
 import cx from "classnames";
@@ -20,6 +20,7 @@ function RegularCard({ ...props }) {
     cardSubtitle,
     content,
     footer,
+    avatar,
     styleHeader,
   } = props;
   const plainCardClasses = cx({
@@ -32,6 +33,7 @@ function RegularCard({ ...props }) {
     <Card className={classes.card + plainCardClasses}>
       <CardHeader
         style={styleHeader}
+        avatar={avatar}
         classes={{
           root:
             classes.cardHeader +
@@ -63,7 +65,8 @@ RegularCard.propTypes = {
   cardTitle: PropTypes.node,
   cardSubtitle: PropTypes.node,
   content: PropTypes.node,
-  footer: PropTypes.node
+  footer: PropTypes.node,
+  avatar: PropTypes.node,
 };
 
 export default withStyles(regularCardStyle)(RegularCard);

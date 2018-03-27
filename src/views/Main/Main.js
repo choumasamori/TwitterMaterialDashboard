@@ -1,11 +1,19 @@
 import React from 'react';
-import Card, {CardActions, CardHeader, CardMedia} from 'material-ui/Card';
+import {
+    withStyles,
+    Card,
+    CardContent,
+    CardHeader,
+    CardActions,
+    Avatar
+  } from "material-ui";
 import Divider from 'material-ui/Divider';
 import {Redirect} from 'react-router-dom';
 import { Grid } from "material-ui";
 import {
     ProfileCard,
     RegularCard,
+    TasksCard,
     Button,
     CustomInput,
     ItemGrid
@@ -30,6 +38,7 @@ export class Main extends React.Component{
             people: [],
         };
         this.onChangeTweet = this.onChangeTweet.bind(this);
+        this.getTweets = this.getTweets.bind(this);
     }
 
     getTweets(){
@@ -38,21 +47,24 @@ export class Main extends React.Component{
             headers: {
               'Access-Token': localStorage.getItem('access'),
             }
-      })
-        .then(results => results.json())
-        .then(data => {let tweets = data.map((item)=>{
+      }).then(results => results.json()).then(data => {let tweets = data.map((item)=>{
             return(
                 <div key={item.id} className="tweetListWrapper">
-                    <Card>
-                    <CardHeader title="John" subtitle="john" avatar="http://fanaru.com/random/image/thumb/160391-random-seriously-face-avatar.jpg" />
-                    <Divider />
-                    <div className="tweetDetail">
+                    <RegularCard
+                    cardTitle="John"
+                    cardSubtitle="john"
+                    headerColor="blue"
+                    avatar={<Avatar src="http://fanaru.com/random/image/thumb/160391-random-seriously-face-avatar.jpg"/>}
+                    content={
+                        <div className="tweetDetail">
                         <img src={item.thumbnail_url}/>
                         <p>
                            {item.summary}
                         </p>
                     </div>
-                    </Card>
+                    }
+                    >
+                    </RegularCard>
                  </div>
             );
         });
@@ -69,17 +81,19 @@ export class Main extends React.Component{
         .then(data => {let people = data.results.map((item, index)=>{
             return(
                 <div key={index} className="follow">
-                    <Card>
-                    <div className="peopleDetail">
-                    <div className="headerWrapper">
-                    <CardHeader style={{}} title={item.name.first} subtitle={item.login.username} avatar={item.picture.medium} />
-                    </div>
-                    <CardActions style={{ marginTop: '4%',}}>
-                            <button type="submit" label="Follow"/>
-                    </CardActions>
-                    </div>
-                    </Card>
-                 </div>
+                <ItemGrid xs={12} sm={12} md={4}>
+          <ProfileCard
+            avatar={item.picture.medium}
+            subtitle={item.login.username}
+            title={item.name.first}
+            footer={
+              <Button color="primary" round>
+                Follow
+              </Button>
+            }
+          />
+        </ItemGrid>
+        </div>
             );
         });
         this.setState({
@@ -152,7 +166,7 @@ export class Main extends React.Component{
                 <div>
 
                 <Grid container>
-        <ItemGrid xs={12} sm={12} md={4}>
+        <ItemGrid xs={4} sm={4} md={4}>
         <ProfileCard
             avatar="http://fanaru.com/random/image/thumb/160391-random-seriously-face-avatar.jpg"
             subtitle="john"
@@ -161,7 +175,7 @@ export class Main extends React.Component{
           />
         </ItemGrid>
       </Grid>
-      
+
                   <div className="followWrapper">
                   {this.state.people}
                     </div>
