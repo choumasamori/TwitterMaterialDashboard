@@ -8,6 +8,7 @@ import NotificationsPage from "views/Notifications/Notifications.jsx";
 import Login from "views/Login/Login.jsx"
 import TableTest from "views/TableTest/TableTest.jsx"
 import {Main} from 'views/Main/Main.js';
+import {Logout} from 'views/Logout/Logout.jsx';
 
 import {
   Dashboard,
@@ -27,6 +28,12 @@ const appRoutes = [
     navbarName: "TWITTER",
     icon: Dashboard,
     component: Main
+  },
+  {
+    path: "/logout",
+    sidebarName: "Log Out",
+    icon: Dashboard,
+    component: Logout
   },
   { redirect: true, path: "/", to: "/login", navbarName: "Redirect" }
 ];
