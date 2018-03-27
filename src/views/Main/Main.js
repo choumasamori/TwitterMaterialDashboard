@@ -206,7 +206,9 @@ export class Main extends React.Component{
                     </div>
                     </Card>
                  </div>
-                 {this.state.tweets}
+                 <div className="contentTWIT" >
+                    {this.state.tweets}
+                 </div>
         </div>
               }
     </div>

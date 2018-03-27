@@ -275,16 +275,25 @@ body,
     float:right;
     margin-right:2%;    
     width:30%;
-    margin-top:-550px;
+    margin-top:-523px;
+    margin-bottom:30px;
 }
 .profile{
-    margin-top:60px;
+    margin-top:80px;
     margin-bottom:200px;
 }
 .inputWrapper{
-    margin-top:120px;
-    height:250px;
+    margin-top:-500px;
+    height:275px;
     margin-bottom:50px;
-    width:1050px;
-    margin-left:80px;
+    width:500px;
+    margin-left:20px;
+}
+.tweetWrapper{
+    width:550px;
+    margin-left:250px;
+}
+.contentTWIT{
+    width:550px;
+    margin-left:250px;
 }
