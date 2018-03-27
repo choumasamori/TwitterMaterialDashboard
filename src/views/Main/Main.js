@@ -182,7 +182,7 @@ export class Main extends React.Component{
                 </div>
             </ItemGrid>
                     
-            <ItemGrid xs={12} sm={6} md={6}>
+            <ItemGrid xs={12} sm={12} md={10}>
                     <div>
                     <Card>
                         <div className="inputWrapper">
@@ -191,7 +191,7 @@ export class Main extends React.Component{
                                 <div className="form-group">
                                     <label>Write Something</label>
                                     <textarea
-                                        className="form-control" rows="5" id="comment" name="tweetText" 
+                                        className="form-control" rows="5" id="comment" name="tweetText"  maxLength="500"
                                         value={this.state.tweet} onChange={this.onChangeTweet} required>
                                     </textarea>
                                 </div>
