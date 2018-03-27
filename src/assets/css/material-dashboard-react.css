@@ -271,9 +271,8 @@ body,
         margin-right: auto;
     }
 
-.followWrapper{
-    margin-right:20%;    
-    margin-top:-87%;
+.followWrapper{ 
+    margin-top:23%;
 }
 .profile{
     margin-top:50%;
@@ -284,6 +283,5 @@ body,
     width:90%;
 }
 .contentTWIT{
-    margin-top:2%;
+    margin-top:-30%;
 }
-

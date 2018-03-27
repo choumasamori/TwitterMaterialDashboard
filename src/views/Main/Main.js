@@ -183,7 +183,7 @@ export class Main extends React.Component{
             </ItemGrid>
                     
             <ItemGrid xs={12} sm={6} md={6}>
-                    <div className="tweetWrapper">
+                    <div>
                     <Card>
                         <div className="inputWrapper">
                             <form name="myForm" method="POST" onSubmit={(e) => this.handleSubmit(e)}encType="multipart/form-data">
@@ -205,17 +205,18 @@ export class Main extends React.Component{
                 </ItemGrid>
 
                  
+                <ItemGrid xs={12} sm={8} md={4}>
+                    <div className="followWrapper">
+                        {this.state.people} 
+                    </div>
+                </ItemGrid>
+
                  <ItemGrid xs={12} sm={12} md={8}>
                     <div className="contentTWIT">
                         {this.state.tweets}
                      </div>
                  </ItemGrid>
 
-                <ItemGrid xs={6} sm={4} md={4}>
-                    <div className="followWrapper">
-                        {this.state.people} 
-                    </div>
-                </ItemGrid>
 
             </Grid>
         </div>
