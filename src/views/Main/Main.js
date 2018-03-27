@@ -87,7 +87,7 @@ export class Main extends React.Component{
         .then(data => {let people = data.results.map((item, index)=>{
         return(
         <div key={index}>
-            <ItemGrid xs={12} sm={12} md={12}>
+            <ItemGrid xs={10} sm={10} md={10}>
                 <ProfileCard
                     avatar={item.picture.medium}
                     subtitle={item.login.username}
@@ -186,7 +186,7 @@ export class Main extends React.Component{
         <Grid container>
             <ItemGrid xs={10} sm={10} md={10}>
                 <div className="followWrapper">
-                  {this.state.people}
+                  {this.state.people} 
                 </div>
             </ItemGrid>
         </Grid>
