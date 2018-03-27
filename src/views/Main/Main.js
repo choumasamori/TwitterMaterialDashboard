@@ -27,6 +27,8 @@ import {
   } from 'material-ui/Form';
 
   //bootstrap & jquery
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'jquery/dist/jquery.min.js';
 
 
 export class Main extends React.Component{

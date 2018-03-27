@@ -275,7 +275,7 @@ body,
     float:right;
     margin-right:2%;    
     width:30%;
-    margin-top:-54%;
+    margin-top:-523px;
     margin-bottom:30px;
 }
 .profile{
@@ -283,17 +283,17 @@ body,
     margin-bottom:200px;
 }
 .inputWrapper{
-    margin-top:-129%;
-    height:28%;
-    margin-bottom:30px;
-    width:40%;
+    margin-top:-500px;
+    height:275px;
+    margin-bottom:50px;
+    width:500px;
     margin-left:20px;
 }
 .tweetWrapper{
-    width:40%;
-    margin-left:25%;
+    width:550px;
+    margin-left:250px;
 }
 .contentTWIT{
-    width:40%;
-    margin-left:25%;
+    width:550px;
+    margin-left:250px;
 }
