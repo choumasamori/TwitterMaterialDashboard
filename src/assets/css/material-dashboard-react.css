@@ -268,20 +268,23 @@ body,
 
 .followWrapper{
     float:right;
-    margin-right:-20%;    
+    margin-right:-20%;  
+    margin-top: 5%;  
     width:30%;
-    margin-top:-32%;
+    position: relative;
 }
 .profile{
     margin-top:5%;
+    position: absolute;
 }
 .inputWrapper{
-    margin-top:-125%;
+    margin-bottom:5%;
     height:275px;
     width:85%;
     margin-left:5%;
 }
 .tweetWrapper{
+    margin-top:-100%;
     width:40%;
     margin:0 auto; 
     margin-left:26%;
@@ -289,6 +292,5 @@ body,
 .contentTWIT{
     width:40%;
     margin:0 auto; 
-    margin-top:-20%;
     margin-left:26%;
 }
