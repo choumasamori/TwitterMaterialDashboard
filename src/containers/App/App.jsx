@@ -52,7 +52,7 @@ class App extends React.Component {
         <div id="sidebar">
         <Sidebar
           routes={appRoutes}
-          logoText={"React Twitter API"}
+          logoText={"React TWIT API"}
           logo={logo}
           image={image}
           handleDrawerToggle={this.handleDrawerToggle}
