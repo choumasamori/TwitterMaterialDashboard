@@ -272,16 +272,19 @@ body,
     }
 
 .followWrapper{ 
-    margin-top:23%;
+    margin-top:5%;
+}
+.followerEnter{
+    margin-bottom:11%;
 }
 .profile{
-    margin-top:50%;
+    margin-top:15%;
 }
 .inputWrapper{
-    margin-top:20%;
+    margin-top:10%;
     margin-left:5%;
     width:90%;
 }
 .contentTWIT{
-    margin-top:-30%;
+    margin-top:3%;
 }

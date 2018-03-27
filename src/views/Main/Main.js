@@ -86,8 +86,8 @@ export class Main extends React.Component{
         .then(results => results.json())
         .then(data => {let people = data.results.map((item, index)=>{
         return(
-        <div key={index}>
-            <ItemGrid xs={10} sm={10} md={10}>
+        <div key={index} className="followerEnter">
+            <ItemGrid xs={12} sm={12} md={12}>  
                 <ProfileCard
                     avatar={item.picture.medium}
                     subtitle={item.login.username}
@@ -204,19 +204,20 @@ export class Main extends React.Component{
                     </div>
                 </ItemGrid>
 
-                 
-                <ItemGrid xs={12} sm={8} md={4}>
-                    <div className="followWrapper">
-                        {this.state.people} 
-                    </div>
-                </ItemGrid>
 
+                
                  <ItemGrid xs={12} sm={12} md={8}>
                     <div className="contentTWIT">
                         {this.state.tweets}
                      </div>
                  </ItemGrid>
 
+                                  
+                <ItemGrid xs={12} sm={8} md={4}>
+                    <div className="followWrapper">
+                        {this.state.people} 
+                    </div>
+                </ItemGrid>
 
             </Grid>
         </div>
