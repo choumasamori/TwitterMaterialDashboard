@@ -49,7 +49,7 @@ class HeaderLinks extends React.Component {
           aria-label="edit"
           customClass={classes.top + " " + classes.searchButton}
         >
-          <Search className={classes.searchIcon} />
+        <Search className={classes.searchIcon} />
         </SearchButton>
         <IconButton
           color="inherit"

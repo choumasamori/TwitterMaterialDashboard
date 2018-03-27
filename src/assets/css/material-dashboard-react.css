@@ -270,37 +270,30 @@ body,
         margin-left: auto;
         margin-right: auto;
     }
-    .avatarWrapper{
-        float: left;
-        width: 80%;
-        display:block;
-    }
-    .tweetWrapper{
-        width:39%;
-        margin-left: 25%;
-        position: absolute;
-    }
-    .tweetListWrapper{
-        width:60%;
-        margin-left: 28%;
-        height: auto;
-    }
-    .inputWrapper{
-        width: 100%;
-        padding: 30px;
-        height:auto;
-        display: inline-flex;
-    }
-    .tweetDetail{
-        text-align: center;
-        height: auto;
-        margin-top:2%;
-    }
-    .follow{
-        margin-top: 2%;
-    }
-    .followWrapper{
-        margin-top: -8px;
-        float:right;
-        width:30%;
-    }
+
+.followWrapper{
+    float:right;
+    margin-right:2%;    
+    width:30%;
+    margin-top:-54%;
+    margin-bottom:30px;
+}
+.profile{
+    margin-top:80px;
+    margin-bottom:200px;
+}
+.inputWrapper{
+    margin-top:-129%;
+    height:28%;
+    margin-bottom:30px;
+    width:40%;
+    margin-left:20px;
+}
+.tweetWrapper{
+    width:40%;
+    margin-left:25%;
+}
+.contentTWIT{
+    width:40%;
+    margin-left:25%;
+}
