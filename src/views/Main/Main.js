@@ -183,10 +183,16 @@ export class Main extends React.Component{
             </div>
         </Grid>
 
+        <Grid container>
+            <ItemGrid xs={10} sm={10} md={10}>
                 <div className="followWrapper">
                   {this.state.people}
                 </div>
+            </ItemGrid>
+        </Grid>
                     
+            <Grid container>
+                <ItemGrid xs={12} sm={12} md={12}>
                     <div className="tweetWrapper">
                     <Card>
                     <div className="inputWrapper">
@@ -194,7 +200,7 @@ export class Main extends React.Component{
                             <br />
                             <div className="form-group">
                                 <label>Write Something</label>
-                                <textarea 
+                                <textarea className="txtArea"
                                     className="form-control txtarea" rows="4" id="comment" name="tweetText" 
                                     value={this.state.tweet} onChange={this.onChangeTweet} required>
                                 </textarea>
@@ -206,9 +212,15 @@ export class Main extends React.Component{
                     </div>
                     </Card>
                  </div>
-                 <div className="contentTWIT" >
-                    {this.state.tweets}
-                 </div>
+                    <Grid container>
+                        <ItemGrid xs={12} sm={12} md={12}>
+                            <div className="contentTWIT" >
+                                {this.state.tweets}
+                            </div>
+                        </ItemGrid>
+                    </Grid>
+                 </ItemGrid>
+            </Grid>
         </div>
               }
     </div>

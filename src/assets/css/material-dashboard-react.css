@@ -273,27 +273,25 @@ body,
 
 .followWrapper{
     float:right;
-    margin-right:2%;    
+    margin-right:-20%;    
     width:30%;
-    margin-top:-523px;
-    margin-bottom:30px;
+    margin-top:-32%;
 }
 .profile{
-    margin-top:80px;
-    margin-bottom:200px;
+    margin-top:5%;
 }
 .inputWrapper{
-    margin-top:-500px;
+    margin-top:-125%;
     height:275px;
-    margin-bottom:50px;
-    width:500px;
-    margin-left:20px;
+    margin-bottom:20%;
+    width:85%;
+    margin-left:5%;
 }
 .tweetWrapper{
-    width:550px;
-    margin-left:250px;
+    width:40%;
+    margin-left:20%;
 }
 .contentTWIT{
-    width:550px;
-    margin-left:250px;
+    width:40%;
+    margin-left:20%;
 }

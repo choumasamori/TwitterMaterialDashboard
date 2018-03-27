@@ -18,7 +18,8 @@ import {
   BubbleChart,
   LocationOn,
   Notifications,
-  Fingerprint
+  Fingerprint,
+  PowerSettingsNew
 } from "material-ui-icons";
 
 const appRoutes = [
@@ -32,7 +33,7 @@ const appRoutes = [
   {
     path: "/logout",
     sidebarName: "Log Out",
-    icon: Dashboard,
+    icon: PowerSettingsNew,
     component: Logout
   },
   { redirect: true, path: "/", to: "/login", navbarName: "Redirect" }
