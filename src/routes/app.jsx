@@ -25,8 +25,8 @@ import {
 const appRoutes = [
   {
     path: "/main",
-    sidebarName: "Main",
-    navbarName: "TWITTER",
+    sidebarName: "TWIT",
+    navbarName: "TWIT",
     icon: Dashboard,
     component: Main
   },
