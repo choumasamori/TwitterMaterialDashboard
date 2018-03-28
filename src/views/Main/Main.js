@@ -169,9 +169,11 @@ export class Main extends React.Component{
     <div>
             {!isAlreadyAuthenticated ?
             <Redirect to ={{pathname: '/'}} /> : 
-        <div>
+        <div className="row">
+        
         <Grid container>
-            <ItemGrid xs={4} sm={2} md={2}>
+            <div className="column">
+            <ItemGrid xs={12} sm={12} md={12}>
                 <div className="profile">
                     <ProfileCard 
                         avatar="http://fanaru.com/random/image/thumb/160391-random-seriously-face-avatar.jpg"
@@ -181,8 +183,9 @@ export class Main extends React.Component{
                     />
                 </div>
             </ItemGrid>
-                    
-            <ItemGrid xs={12} sm={12} md={10}>
+            </div>
+            <div className="column">
+            <ItemGrid xs={12} sm={12} md={12}>
                     <div>
                     <Card>
                         <div className="inputWrapper">
@@ -204,21 +207,20 @@ export class Main extends React.Component{
                     </div>
                 </ItemGrid>
 
-
                 
-                 <ItemGrid xs={12} sm={12} md={8}>
+                 <ItemGrid xs={12} sm={12} md={12}>
                     <div className="contentTWIT">
                         {this.state.tweets}
                      </div>
                  </ItemGrid>
-
-                                  
-                <ItemGrid xs={12} sm={8} md={4}>
+                </div>
+                 <div className="column">                 
+                <ItemGrid xs={12} sm={12} md={12}>
                     <div className="followWrapper">
                         {this.state.people} 
                     </div>
                 </ItemGrid>
-
+                </div>
             </Grid>
         </div>
               }
